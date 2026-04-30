@@ -32,7 +32,7 @@ export const Whatsapp = () => {
 
             <div className='p-container'>
                 <p className='p'>
-                    Para que estés informado, te dejamos el enlace de nuestros grupos de Whatsapp.También nos puedes seguir en X.</p>
+                    Para que estés informado, te dejamos el enlace de nuestros grupos de Whatsapp.</p>
             </div>
 
             <div className='links'>
