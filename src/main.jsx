@@ -16,22 +16,18 @@ import { Afiliacion } from './Afiliacion/Afiliacion'
 import { Denuncia } from './Denuncia/Denuncia';
 import { Rrhh } from './RRHH/Rrhh';
 import { Whatsapp } from './Whatsapp/Whatsapp';
-// import { News } from './News/News';
 import { Seguro } from './Seguro/Seguro'
 
 import MenuProvider from './context/MenuProvider';
 import ChatProvider from './context/ChatProvider';
-// import EmailProvider from './context/EmailProvider';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
-    {/* <ClientContext.Provider value={client}> */}
       <MenuProvider>
         <ChatProvider>
-          {/* <EmailProvider> */}
             <Router>
               <Routes>
                 <Route path='/' element={<App />} />
@@ -41,7 +37,6 @@ root.render(
                 <Route path='/denuncia' element={<Denuncia />} />
                 <Route path='/rrhh' element={<Rrhh />} />
                 <Route path='/whatsapp' element={<Whatsapp />} />
-                {/* <Route path='/news' element={<News />} /> */}
                 <Route path='/seguro' element={<Seguro />} />
                 <Route path='/miravete' element={<Miravete name={'Miravete'} url={'https://chat.whatsapp.com/Cf8JdJ8sQJTCVnHIRaUmN2'} />} />
                 <Route path='/sanEpifanio' element={<SanEpifanio name={'San Epifanio'} url={'https://chat.whatsapp.com/Gd094MyOh1V8UbsDyoEzeW?mode=hqrc'} />} />
@@ -51,10 +46,8 @@ root.render(
                 <Route path='/madridRio' element={<MadridRio name={'Madrid Rio'} url={'https://chat.whatsapp.com/Cf8JdJ8sQJTCVnHIRaUmN2'} />} />
               </Routes>
             </Router>
-          {/* </EmailProvider> */}
         </ChatProvider>
       </MenuProvider>
-    {/* </ClientContext.Provider> */}
   </StrictMode>
 );
 

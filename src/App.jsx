@@ -40,20 +40,6 @@ function App() {
         <Menu />
       </div>
 
-      {/* <div className='selectOption' style={{ paddingTop: padding, position: 'relative', top, right: 0, left: 0 }}>
-        <div className='container-toast'>
-          <Link to={'/seguro'}>
-            <Toast text={'seguro de sanciones'} text_toast_menu={'text-toast menu1'} position={menuHeight + 2}
-            />
-          </Link>
-
-          <Link to={'/news'}>
-            <Toast text={'ultimas noticias'} text_toast_menu={'text-toast menu2'} position={menuHeight + 2}
-            />
-          </Link>
-        </div>
-      </div> */}
-
       <div className='main'>
         <MapLogo />
         <UgtLogo />

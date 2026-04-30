@@ -3,7 +3,6 @@ import '../App.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import MenuContext from '../context/MenuContext';
 import ChatContext from '../context/ChatContext';
-// import EmailContext from '../context/EmailContext';
 
 
 import { Header } from '../MainPage/Header';
@@ -25,7 +24,6 @@ export const Miravete = ({ name, url }) => {
 
   const { valueMenu, handleFalseMenu } = useContext(MenuContext)
   const { chatValues } = useContext(ChatContext)
-  // const { emailValues } = useContext(EmailContext)
 
   const [showFooterCheck, setShowFooterCheck] = useState(true)
   const [showFooterChat, setShowFooterChat] = useState(false)
