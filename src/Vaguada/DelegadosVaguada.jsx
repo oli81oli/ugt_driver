@@ -1,24 +1,20 @@
 import '../App.css';
 
+import { TextContact } from '../Contact/TextContact';
+import { ContactBox } from '../Contact/ContactBox';
 import { Chat } from '../Contact/Chat';
 
 export const DelegadosVaguada = ({ name, showInfoDelegados, setShowFooterChat }) => {
-
     return (
         <div className={showInfoDelegados ? 'show' : 'hide'}>
-            <div className='p-container'>
-                <p className='p'>Todavía no hay delegad@s en {name}.
-                </p>
-
-                <p className='p second-p'>
-                    En cuanto haya información acerca de la formación sindical en esta base, actualizaremos esta sección.
-                </p>
-            </div>
-            <div className='profile-container' style={{ paddingBottom: '.4%' }}>
+            <TextContact name={name} />
+            <div className='profile-container'>
+                <ContactBox props={{ name: 'Abril', status: 'de Comité', src: 'https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871263/uploads/v8xummfbqaofoq3w7jou.png', phone: '34727717641' }} />
+                <ContactBox props={{ name: 'Jorge', status: 'de Comité', src: 'https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871263/uploads/v8xummfbqaofoq3w7jou.png', phone: '34656436308' }} />
+                <ContactBox props={{ name: 'Marcela', status: 'de Comité', src: 'https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871263/uploads/v8xummfbqaofoq3w7jou.png', phone: '34619477092' }} />
             </div>
 
             <Chat resetValues={setShowFooterChat} />
-
         </div>
     )
 }

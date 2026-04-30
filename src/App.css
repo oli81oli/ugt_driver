@@ -1,4 +1,14 @@
 :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* color-scheme: dark ;  */
+  /* color: rgba(255, 255, 255, 0.87); */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   --light-grey: #eaeaea;
   --light-dark-grey: #b6b6b6;
   --dark-grey: #696969;
@@ -6,6 +16,7 @@
   --red-ugt: #e4002b;
   --red-hover: #940000;
 }
+
 
 * {
   margin: 0;
@@ -158,7 +169,6 @@ header h3 {
 }
 
 .main {
-  /* margin-top: 12%; */
   text-align: center;
   background-color: var(--light-grey);
   margin-bottom: -2px;
@@ -366,6 +376,7 @@ header div img {
 
 .main-noBackImg2 img {
   width: 70%;
+  padding: 10%;
 }
 
 .selectOption {
@@ -435,7 +446,6 @@ header div img {
 .container-text-contact {
   text-align: center;
   letter-spacing: .1em;
-  /* background-color: white; */
 }
 
 .container-text-contact .info-text {
@@ -459,7 +469,7 @@ header div img {
 }
 
 .profile-container {
-  margin: 17% 10%;
+  margin: 25% 10%;
 }
 
 .contact-box {
@@ -512,9 +522,6 @@ header div img {
   cursor: pointer;
 }
 
-/* .profile .email-logo {
-  cursor: pointer;
-} */
 
 .profile img {
   width: 15%;
@@ -565,6 +572,15 @@ a:visited {
 .info-avatar {
   position: relative;
 }
+.info-avatar .position-whats{
+  z-index: 1;
+   background-color: #23ab23;
+  padding: 4px 4px;
+  border-radius: 100%;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
 
 .info-avatar img {
   border-radius: 100%;
@@ -575,10 +591,6 @@ a:visited {
 }
 
 .info-avatar:before {
-  content: "\f232";
-  z-index: 1;
-  background: #23ab23;
-  color: white;
   padding: 4px 5px;
   border-radius: 100%;
   position: absolute;
@@ -745,29 +757,14 @@ button.close-chat {
   position: absolute;
   width: 100%;
   z-index: 99;
-  /* margin-top: -25%; */
 }
 
-/* #email-box {
-  margin: 10%;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 15px var(--darkest-grey);
-  overflow: hidden;
-  animation-name: showchat;
-  animation-duration: 1s;
-  transform: scale(1);
-  position: relative;
-} */
 
 form {
   background-color: var(--light-grey);
   display: none;
 }
 
-/* #email-box form.showEmail {
-  display: block;
-} */
 
 form .input-box {
   padding: 5% 5% 0 5%;
@@ -790,11 +787,6 @@ form input {
   padding: 5px 0;
 }
 
-/* #email-text {
-  border: 1px solid var(--dark-grey);
-  resize: none;
-  overflow: none;
-} */
 
 .flex-bottom {
   display: flex;
@@ -825,43 +817,6 @@ form input {
   text-transform: uppercase;
   text-align: center;
 }
-
-/* #toast-email {
-  background-color: rgb(145, 13, 13);
-  padding: 2%;
-  margin: 3% 10%;
-  border-radius: 10px;
-  animation: toast 1s;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-} */
-
-/* #toast-email .text-toast-email {
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-#toast-email-ok {
-  background-color: rgb(13, 145, 31);
-  padding: 2%;
-  margin: 3% 10%;
-  border-radius: 10px;
-  animation: toast 1s;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-}
-
-#toast-email-ok .text-toast-email {
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-} */
-
 
 @keyframes toast {
   0% {
@@ -1026,7 +981,7 @@ form input {
 }
 
 /* NEWS */
-
+/* 
 .data-container {
   text-align: center;
   border: 2px solid var(--darkest-grey);
@@ -1041,15 +996,7 @@ form input {
   text-transform: uppercase;
   background-color: var(--darkest-grey);
   letter-spacing: .1em;
-  /* margin-top: -5.1px; */
 }
-
-/* .data-container img {
-  aspect-ratio: 1/1;
-  width: 100%;
-  object-fit: fill;
-} */
-
 
 
 .container-text-p span {
@@ -1098,7 +1045,7 @@ form input {
 
 .table ul li {
   list-style: none;
-}
+} */
 
 
 /* AFILIACION */
@@ -1114,7 +1061,7 @@ form input {
 
 .btn.afiliacion {
   padding: 5%;
-  margin: 6% 7%;
+  margin: 15% 7%;
   background-color: var(--red-ugt);
 }
 
@@ -1244,7 +1191,6 @@ form input {
   }
 
   .links-box1 {
-    /* display: flex; */
     justify-content: center;
     width: 79%;
   }
@@ -1259,7 +1205,6 @@ form input {
   }
 }
 
-@media (min-width:992px) {}
 
 @media (min-width: 1200px) {
 

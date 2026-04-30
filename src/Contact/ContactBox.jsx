@@ -19,12 +19,6 @@ export const ContactBox = ({ props }) => {
         })
     }
 
-    // const showEmailfn = (name) => {
-    //     handleEmailValues({
-    //         name,
-    //         statusEmail: true
-    //     })
-    // }
     useEffect(() => {
         if (Object.keys(chatValues).length) {
 
@@ -54,9 +48,6 @@ export const ContactBox = ({ props }) => {
                 <img className='whatsapp-logo' onClick={() => showChatfn(name)}
                     src='https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871270/uploads/gggyrqnhb7jnalorhk6u.png'
                     alt='logo' />
-                {/* <img className='email-logo' onClick={() => showEmailfn(name)}
-                    src='https://res.cloudinary.com/dpflfpgcj/image/upload/v1701869215/uploads/jrgoyxgaomdw29ibm0lz.png'
-                    alt='logo' /> */}
             </div>
         </div>
     )
