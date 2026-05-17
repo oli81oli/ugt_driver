@@ -7,8 +7,8 @@ import { Menu } from './MainPage/Menu'
 import { MapLogo } from './MainPage/MapLogo'
 import { UgtLogo } from './MainPage/UgtLogo'
 import { TextContainer } from './MainPage/TextContainer';
+import { FormHelp } from './MainPage/FormHelp';
 import { Footer } from './MainPage/Footer';
-import { Toast } from './Utils/Toast';
 
 import MenuContext from './context/MenuContext';
 
@@ -25,10 +25,10 @@ function App() {
 
 
   useEffect(() => {
-    setPadding(menu.current.children[0].clientHeight - menu.current.clientHeight - menu.current.clientHeight)
-    setFooterHeight(footer.current.firstChild.clientHeight)
-    setMenuHeight(menu.current.clientHeight)
-    setTop(menu.current.children[0].clientHeight)
+    // setPadding(menu.current.children[0].clientHeight - menu.current.clientHeight - menu.current.clientHeight)
+    // setFooterHeight(footer.current.firstChild.clientHeight)
+    // setMenuHeight(menu.current.clientHeight)
+    // setTop(menu.current.children[0].clientHeight)
     valueMenu && handleFalseMenu()
     // eslint-disable-next-line
   }, [])
@@ -46,6 +46,7 @@ function App() {
       </div>
 
       <TextContainer footerHeight={footerHeight} menuHeight={menuHeight} />
+      <FormHelp/>
 
       <div ref={footer}>
         <Footer id={'footer-main'} mainFooter={'setFooter'} />

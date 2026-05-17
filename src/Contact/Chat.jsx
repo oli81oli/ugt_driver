@@ -75,7 +75,7 @@ export const Chat = ({ resetValues }) => {
                 </div>
 
                 <div id='get-number'>1</div>
-                <button className='close-chat' onClick={() => closeChat()}>×</button>
+                <button className='close-chat' onClick={() => closeChat()}>✕</button>
             </div>
             <Footer id={'footer-form'} />
         </div>

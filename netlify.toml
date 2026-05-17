@@ -1,0 +1,20 @@
+# netlify.toml
+
+[build]
+  # Comando para construir tu proyecto React
+  # ⚠️ Cambia a "npm run build" para CRA o "vite build" si usas Vite
+  command = "npm run build"
+
+  # Carpeta que Netlify va a publicar como frontend
+  # CRA usa "build", Vite usa "dist"
+  publish = "dist"
+
+  # Carpeta donde estarán tus Netlify Functions
+  functions = "netlify/functions"
+
+# 🔁 Redirección para SPA (React Router)
+# Evita 404 al recargar cualquier ruta
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
