@@ -1,8 +1,4 @@
-// netlify/functions/send-email.js
-// ✅ Para desarrollo local: carga variables de .env
-// import 'dotenv/config';
-// requqire('dotenv').config();
-require("dotenv")
+
 import nodemailer from "nodemailer";
 
 // 🔴 VERIFICAR HCAPTCHA
