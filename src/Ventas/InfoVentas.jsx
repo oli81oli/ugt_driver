@@ -13,7 +13,7 @@ export const InfoVentas = ({ showInfoInfo }) => {
 
             </div>
             <div className='links-box2'>
-                <Link to='mailto:roberto.castro@moovecars.com'>
+                <Link to='mailto:wilson.tovar@moovecars.com'>
                     <div className='link'>
                         <img src='https://res.cloudinary.com/dpflfpgcj/image/upload/o_83/v1720110069/uploads/ew2bbknumnrkzjxnaxxt.png'
                             alt='logo' className='logos-base2' />
