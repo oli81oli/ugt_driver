@@ -110,19 +110,30 @@ export const Base = () => {
                 </div>
 
                 <div className='links-box1'>
-                    <Link to='https://forms.office.com/pages/responsepage.aspx?id=zjeuWplqG0m4Tq6vRsA_DnMW15Jj909NtQHL-su-vddUQTBWRVhPSDBGQ0gwVjVKVDRXSTU2RDNHRCQlQCN0PWcu&origin=QRCode&route=shorturl'>
-                        <div className='link  link-no-mt'>
-                            <img src='https://res.cloudinary.com/dpflfpgcj/image/upload/v1712220750/uploads/iqckktfevml1fag3c6yd.png'
-                                alt='logo' className='logos-base2' />
-                            volante mutua
-                        </div>
-                    </Link>
-
                     <Link to='https://moovecars-canaletico.appcore.es/'>
-                        <div className='link' style={{ marginBottom: '20%' }}>
+                        <div className='link link-no-mt'>
                             <img src='https://res.cloudinary.com/dpflfpgcj/image/upload/o_83/v1712220711/uploads/ochanfzsmieau7ktdkgy.png'
                                 alt='logo' className='logos-base2' />
                             canal etico
+                        </div>
+                    </Link>
+                   
+                    <Link to='https://www.zunder.com/mapa-de-ubicaciones/'>
+                        <div className='link' style={{ marginBottom: '20%' }}>
+                            <img src='https://res.cloudinary.com/dpflfpgcj/image/upload/o_83/v1712220741/uploads/mfnfc14jwxj8dtec8dmw.png'
+                            alt='logo' className='logos-base2' />
+                            cargadores
+                        </div>
+                    </Link>
+                </div>
+
+                
+                <div className='links-box1'>
+                    <Link to='https://forms.office.com/pages/responsepage.aspx?id=zjeuWplqG0m4Tq6vRsA_DnMW15Jj909NtQHL-su-vddUQTBWRVhPSDBGQ0gwVjVKVDRXSTU2RDNHRCQlQCN0PWcu&origin=QRCode&route=shorturl'>
+                        <div className='link link-no-mt' style={{ marginBottom: '20%' }}>
+                            <img src='https://res.cloudinary.com/dpflfpgcj/image/upload/v1712220750/uploads/iqckktfevml1fag3c6yd.png'
+                                alt='logo' className='logos-base2' />
+                            volante mutua
                         </div>
                     </Link>
                 </div>

@@ -246,9 +246,9 @@ export const FormHelp = () => {
               >
                 <HCaptcha
                   theme="dark"
-                  sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} // 🔁 NUEVO (antes hardcodeado)
+                  sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
                   onVerify={(token) => setCaptchaToken(token)}
-                  onExpire={() => setCaptchaToken("")} // 🔁 NUEVO
+                  onExpire={() => setCaptchaToken("")}
                   ref={captchaRef}
                 />
               </div>
