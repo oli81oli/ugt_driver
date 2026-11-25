@@ -5,7 +5,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(70%, clamp(140px, 38vw, 460px));
+  width: min(70%, clamp(140px, 75vw, 460px));
   height: auto;
   animation: fill-anim 1s ease forwards 4s;
 }
