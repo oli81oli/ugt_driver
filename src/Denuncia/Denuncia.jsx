@@ -1,4 +1,4 @@
-import '../App.css'
+import './Denuncia.css';
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react';
 import { Header } from '../MainPage/Header'
@@ -42,7 +42,7 @@ export const Denuncia = () => {
             </div>
 
             <div>
-                <Footer id={'footer-main'} mainFooter={'setFooter'} />
+                <Footer id={'footer-main'} />
             </div>
         </div>
     )

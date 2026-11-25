@@ -1,4 +1,4 @@
-import '../App.css';
+import './NoBackImg.css';
 
 export const NoBackImg = ({ noPadding }) => {
     let backImg = 'main-noBackImg'

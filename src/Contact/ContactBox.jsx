@@ -1,4 +1,4 @@
-import '../App.css';
+import './ContactBox.css';
 import { useContext, useEffect, useRef } from 'react';
 import ChatContext from '../context/ChatContext';
 

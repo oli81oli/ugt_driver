@@ -1,0 +1,39 @@
+/* Texto destacado */
+
+.text {
+  font-weight: bold;
+  color: var(--red-ugt);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(0.75rem, 1.8vh, 1.05rem);
+  padding: 0 0 clamp(0.35rem, 1.4vh, 0.75rem);
+}
+
+.blink {
+  animation-name: blinking;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: blinking;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinking {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blinking {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes blinking {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

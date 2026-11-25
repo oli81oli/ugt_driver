@@ -1,4 +1,4 @@
-import '../App.css'
+import './InfoVaguada.css';
 import { Link } from 'react-router-dom'
 
 export const InfoVaguada = ({ showInfoInfo }) => {

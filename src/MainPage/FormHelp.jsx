@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"; // 🔁 añadido useEffect
 import { Spinner } from "../Utils/Spinner";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import "../App.css";
+import "./FormHelp.css";
 
 export const FormHelp = () => {
   const [captchaToken, setCaptchaToken] = useState("");
@@ -130,7 +130,7 @@ export const FormHelp = () => {
       } else {
         showToast(data?.message || "Error ❌");
       }
-    } catch (error) {
+    } catch {
       showToast("Error de conexión ❌");
     } finally {
       setLoading(false);

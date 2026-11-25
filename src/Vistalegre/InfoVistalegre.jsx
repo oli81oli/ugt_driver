@@ -1,4 +1,4 @@
-import '../App.css'
+import './InfoVistalegre.css';
 import { Link } from 'react-router-dom'
 
 export const InfoVistalegre = ({ showInfoInfo }) => {

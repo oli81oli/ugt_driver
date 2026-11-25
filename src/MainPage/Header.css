@@ -1,0 +1,79 @@
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--red-ugt);
+  color: white;
+  padding: clamp(0.5rem, 2vh, 1rem) 4%;
+}
+
+header .respmenu {
+  display: flex;
+}
+
+#menuBox {
+  display: none;
+}
+
+#btnMenu {
+  border: none;
+  background-color: var(--red-ugt);
+  color: white;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  cursor: pointer;
+}
+
+.main-nav {
+  background: var(--red-ugt);
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-bar {
+  width: 30px;
+  margin: 0 15px 0 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.one,
+.two,
+.three {
+  width: 100%;
+  background: #fff;
+  height: 3px;
+  transition: all 0.5s ease-in-out;
+}
+
+.two {
+  margin: 5px 0;
+}
+
+.showNav .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.showNav .two {
+  opacity: 0;
+}
+
+.showNav .three {
+  transform: rotate(-45deg) translate(6px, -7px);
+}
+
+header h3 {
+  text-transform: uppercase;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+}
+
+@media (min-width: 576px) {
+  #menuBox {
+    display: block;
+  }
+}

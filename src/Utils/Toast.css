@@ -1,0 +1,18 @@
+/* Toast simple reutilizable */
+
+.toast {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--red-ugt);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.toast--success {
+  background-color: #22c55e;
+}
+
+.toast--error {
+  background-color: rgb(145, 13, 13);
+}

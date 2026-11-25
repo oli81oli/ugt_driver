@@ -1,4 +1,4 @@
-import '../App.css'
+import './Whatsapp.css';
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react';
 
@@ -41,9 +41,7 @@ export const Whatsapp = () => {
                 </Link>
             </div>
 
-            <div>
-            <Footer id={'footer-main'} mainFooter={'setFooter'}  />
-            </div>
+            <Footer id={'footer-main'} />
         </div>
     )
 }

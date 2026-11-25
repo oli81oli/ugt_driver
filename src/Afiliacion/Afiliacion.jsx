@@ -1,4 +1,4 @@
-import '../App.css'
+import './Afiliacion.css';
 import { useEffect, useRef, useState } from 'react'
 
 import { Header } from '../MainPage/Header'
@@ -48,7 +48,7 @@ export const Afiliacion = () => {
           </a>
         </div>
 
-      <Footer id={'footer-main'} mainFooter={'setFooter'} />
+      <Footer id={'footer-main'} />
 
     </div>
   )

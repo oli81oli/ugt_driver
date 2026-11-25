@@ -1,0 +1,15 @@
+@import '../Contact/ContactBox.css';
+
+/* Delegados de Miravete */
+
+.jesus-text {
+  text-align: center;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+  margin-bottom: 10%;
+  background-color: var(--red-ugt);
+  color: white;
+  border-radius: 2px;
+  padding: 5%;
+}

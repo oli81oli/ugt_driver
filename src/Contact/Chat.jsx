@@ -1,9 +1,9 @@
-import '../App.css'
+import './Chat.css';
 import { useContext } from 'react'
 import ChatContext from '../context/ChatContext'
 import { Footer } from '../MainPage/Footer'
 
-export const Chat = ({ resetValues }) => {
+export const Chat = () => {
 
     const { chatValues, resetChatValues } = useContext(ChatContext)
 
@@ -28,7 +28,6 @@ export const Chat = ({ resetValues }) => {
     }
 
     const closeChat = () => {
-        resetValues(false)
         resetChatValues()
         window.scrollTo({
             top: 0,

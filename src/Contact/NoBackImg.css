@@ -1,0 +1,16 @@
+/* Imagen de cabecera sin fondo */
+
+.main-noBackImg,
+.main-noBackImg2 {
+  display: grid;
+  place-items: center;
+  min-height: clamp(11rem, 34dvh, 20rem);
+  padding: clamp(1rem, 4vh, 2rem) 1rem;
+  background-color: #fff;
+}
+
+.main-noBackImg img,
+.main-noBackImg2 img {
+  width: min(70%, 320px);
+  height: auto;
+}

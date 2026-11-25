@@ -1,4 +1,4 @@
-import '../App.css';
+import './Menu.css';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import MenuContext from '../context/MenuContext';

@@ -1,10 +1,10 @@
-import '../App.css';
+import './DelegadosVistalegre.css';
 
 import { TextContact } from '../Contact/TextContact';
 import { ContactBox } from '../Contact/ContactBox';
 import { Chat } from '../Contact/Chat';
 
-export const DelegadosVistalegre = ({ name, showInfoDelegados, setShowFooterChat }) => {
+export const DelegadosVistalegre = ({ name, showInfoDelegados }) => {
     return (
         <div className={showInfoDelegados ? 'show' : 'hide'}>
             <TextContact name={name} />
@@ -16,7 +16,7 @@ export const DelegadosVistalegre = ({ name, showInfoDelegados, setShowFooterChat
                 <ContactBox props={{ name: 'Armando', status: 'de Comité', src: 'https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871263/uploads/v8xummfbqaofoq3w7jou.png', phone: '34644838479' }} />
             </div>
 
-            <Chat resetValues={setShowFooterChat} />
+            <Chat />
         </div>
     )
 }

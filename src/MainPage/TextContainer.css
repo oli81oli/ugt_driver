@@ -1,0 +1,27 @@
+/* Contenedor de textos de la página principal */
+
+.text-container {
+  width: 100%;
+  padding-block: clamp(0.4rem, 1.5vh, 1rem);
+  text-align: center;
+}
+
+.text-container p:first-of-type {
+  padding: clamp(0.5rem, 2vh, 1.25rem) clamp(0.5rem, 2vw, 1.5rem) clamp(0.75rem, 2.5vh, 1.5rem);
+  color: var(--darkest-grey) !important;
+  font-size: clamp(0.7rem, 1.7vh, 0.95rem);
+  line-height: 1.35;
+  word-spacing: 0.1em;
+  letter-spacing: 0.05em;
+}
+
+.text-container p:last-of-type {
+  color: white !important;
+  font-size: clamp(0.7rem, 1.7vh, 0.95rem);
+  line-height: 1.35;
+  word-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  padding: clamp(0.75rem, 2.8vh, 1.75rem) clamp(0.5rem, 2vw, 1.5rem);
+  background-color: var(--darkest-grey);
+  margin-top: clamp(0.35rem, 1.2vh, 0.75rem);
+}

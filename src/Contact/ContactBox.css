@@ -1,0 +1,85 @@
+/* Tarjetas de delegados */
+
+.profile-container {
+  margin: clamp(1.5rem, 8vw, 5rem) clamp(1rem, 6vw, 4rem);
+}
+
+.contact-box {
+  background-color: var(--light-grey);
+  padding: 5% 10% 1% 10%;
+  border-radius: 2px;
+  margin: 17% 0;
+  border: 2px solid var(--darkest-grey);
+}
+
+.contact-box:first-child {
+  margin: -10% 0 10%;
+}
+
+.profile-text {
+  color: var(--darkest-grey);
+  margin: 15px 0;
+}
+
+.profile-text h3 {
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.profile-text p {
+  margin: 10px 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.75rem;
+  padding: 2%;
+  background-color: var(--red-ugt);
+  border-radius: 5px;
+  margin-bottom: 10%;
+  border: 1px solid var(--darkest-grey);
+}
+
+.profile-photo {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.profile-photo.second-item {
+  background-color: white;
+}
+
+.profile .whatsapp-logo {
+  width: clamp(28px, 8vw, 48px);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.profile img {
+  width: 15%;
+}
+
+.profile .profile-logo {
+  width: 40%;
+  max-width: 160px;
+}
+
+@media (min-width: 576px) {
+  .profile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  .contact-box,
+  .contact-box:first-child {
+    margin: 0;
+  }
+
+  .profile img {
+    width: 20%;
+  }
+}

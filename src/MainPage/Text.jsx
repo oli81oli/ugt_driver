@@ -1,4 +1,4 @@
-import '../App.css';
+import './Text.css';
 
 export const Text = () => {
     return (

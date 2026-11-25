@@ -1,0 +1,17 @@
+/* Mapa (SVG) de la página principal */
+
+#map-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  animation: fill-map 5s ease forwards 0.1s;
+}
+
+@keyframes fill-map {
+  to {
+    fill: var(--light-dark-grey);
+  }
+}

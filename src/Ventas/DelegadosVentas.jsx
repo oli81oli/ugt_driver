@@ -1,10 +1,10 @@
-import '../App.css';
+import './DelegadosVentas.css';
 
 import { TextContact } from '../Contact/TextContact';
 import { ContactBox } from '../Contact/ContactBox';
 import { Chat } from '../Contact/Chat';
 
-export const DelegadosVentas = ({ name, showInfoDelegados, setShowFooterChat }) => {
+export const DelegadosVentas = ({ name, showInfoDelegados }) => {
     return (
         <div className={showInfoDelegados ? 'show' : 'hide'}>
             <TextContact name={name} />
@@ -19,7 +19,7 @@ export const DelegadosVentas = ({ name, showInfoDelegados, setShowFooterChat }) 
                 <ContactBox props={{ name: 'Eduardo', status: 'LOLS', src: 'https://res.cloudinary.com/dpflfpgcj/image/upload/v1701871263/uploads/v8xummfbqaofoq3w7jou.png', phone: '34680339167' }} />
             </div>
 
-            <Chat resetValues={setShowFooterChat} />
+            <Chat />
         </div>
     )
 }

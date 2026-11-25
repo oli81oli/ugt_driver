@@ -1,0 +1,25 @@
+/* Texto de las páginas de base */
+
+.container-text-contact {
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding-inline: 1rem;
+}
+
+.container-text-contact .info-text {
+  font-size: larger;
+  line-height: 1.5em;
+}
+
+.container-text-contact .info-text h2 {
+  text-transform: uppercase;
+  color: var(--darkest-grey);
+  padding: 2% 7% 0 7%;
+  margin-block: var(--base-spacing);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.container-text-contact .info-text p {
+  padding: 2% 7% 0 7%;
+  line-height: 23px;
+}

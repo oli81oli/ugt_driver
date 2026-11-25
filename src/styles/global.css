@@ -1,0 +1,282 @@
+/* Estilos base y compartidos por toda la aplicación.
+   Los estilos específicos de cada componente viven junto a su componente. */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --light-grey: #eaeaea;
+  --light-dark-grey: #b6b6b6;
+  --dark-grey: #696969;
+  --darkest-grey: #222222;
+  --red-ugt: #e4002b;
+  --red-hover: #940000;
+
+  --header-offset: 4.5rem;
+  --base-spacing: clamp(0.75rem, 2vh, 1.25rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Cada vista ocupa, como mínimo, toda la pantalla del dispositivo. */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+#root > div {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+p {
+  color: var(--darkest-grey);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Utilidades */
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#notShow {
+  display: block;
+}
+
+/* Cabecera fija compartida por todas las vistas */
+.fixedMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+/* El menú se superpone a la cabecera: cerrado no ocupa alto en el flujo. */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.menu.showItems {
+  pointer-events: auto;
+}
+
+/* El pie siempre queda abajo sin tapar el contenido. */
+.setFooter {
+  width: 100%;
+  margin-top: auto;
+}
+
+header div img {
+  width: 1.2rem;
+  padding-right: 10px;
+}
+
+/* Texto y contenedores compartidos */
+.p-container {
+  background-color: var(--light-grey);
+  padding-inline: clamp(1rem, 5vw, 3rem);
+  padding-block: clamp(1rem, 4vw, 2rem);
+}
+
+.p-container hr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.p {
+  text-align: center;
+  padding: 7%;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+}
+
+/* Enlaces (usado por Base, RRHH, Documents y las páginas de base) */
+.links {
+  padding-bottom: clamp(1rem, 5vw, 3rem);
+}
+
+.links h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+  padding: 5%;
+  background-color: var(--red-ugt);
+}
+
+.links-box1,
+.links-box2 {
+  padding: 0.1% 10%;
+  background-color: white !important;
+}
+
+.logos-base {
+  width: 30%;
+  margin: -10%;
+}
+
+.logos-base2 {
+  width: 10%;
+}
+
+.logos-base3 {
+  width: 40%;
+}
+
+.link {
+  text-align: center;
+  margin: 20% 0;
+  padding: 5%;
+  text-transform: uppercase;
+  font-size: larger;
+  letter-spacing: 0.1em;
+  color: var(--darkest-grey);
+  background-color: var(--light-dark-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  border: 2px solid var(--darkest-grey);
+  box-shadow: 0 1px 15px var(--dark-grey);
+  gap: 0.75rem;
+}
+
+.link-no-mt {
+  margin: 0;
+}
+
+.link span {
+  color: var(--darkest-grey);
+  text-transform: lowercase;
+  font-family: sans-serif cursive !important;
+  font-size: small;
+}
+
+.link:hover {
+  background-color: var(--dark-grey);
+  transition-duration: 1s;
+  transition-property: all;
+}
+
+/* Botones compartidos */
+.btn {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn.afiliacion {
+  padding: 5%;
+  margin: 15% 7%;
+  background-color: var(--red-ugt);
+}
+
+.btn.whatsapp {
+  background-color: #25d366;
+  padding: 5%;
+  margin: 15% 7%;
+}
+
+.p.x {
+  padding-bottom: 0;
+}
+
+.btn.whatsapp-base {
+  background-color: #25d366;
+  padding: 1%;
+  margin: 2% 7% var(--base-spacing);
+}
+
+@media (min-width: 576px) {
+  #notShow {
+    display: none;
+  }
+
+  .setFooter {
+    position: relative;
+  }
+
+  .links-box1,
+  .links-box2 {
+    padding-inline: 5%;
+  }
+}
+
+@media (min-width: 768px) {
+  .links-box1 {
+    justify-content: center;
+    width: 79%;
+    margin-inline: auto;
+  }
+
+  .links-box2 {
+    width: min(100%, 900px);
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  .logos-base {
+    width: 20%;
+    margin: -6%;
+  }
+
+  .logos-base2 {
+    width: 8%;
+  }
+
+  .link {
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
+  }
+}

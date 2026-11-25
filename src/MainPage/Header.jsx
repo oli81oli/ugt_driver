@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import '../App.css';
+import './Header.css';
 import MenuContext from '../context/MenuContext';
 
 export const Header = () => {

@@ -1,12 +1,14 @@
-import '../App.css';
-import { useState } from 'react'
+import './UgtLogo.css';
+import { useEffect, useState } from 'react'
 
 export const UgtLogo = () => {
 
     const [strokeWidth, setStrokeWidth] = useState(150)
-    setTimeout(() => {
-        setStrokeWidth(25)
-    }, 4270)
+
+    useEffect(() => {
+        const timer = setTimeout(() => setStrokeWidth(25), 4270)
+        return () => clearTimeout(timer)
+    }, [])
 
     return (
         <svg id="logo" version="1.0" xmlns="http://www.w3.org/2000/svg" width="300" height="175" viewBox="0 0 2328 780"

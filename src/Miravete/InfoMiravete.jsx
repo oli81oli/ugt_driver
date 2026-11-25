@@ -1,4 +1,4 @@
-import '../App.css'
+import './InfoMiravete.css';
 import { Link } from 'react-router-dom'
 
 export const InfoMiravete = ({ showInfoInfo }) => {

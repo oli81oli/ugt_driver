@@ -1,4 +1,4 @@
-import '../App.css';
+import './TextContact.css';
 
 export const TextContact = ({name}) => {
     

@@ -1,6 +1,21 @@
 
 import nodemailer from "nodemailer";
 
+const json = (statusCode, data) => ({
+  statusCode,
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
+});
+
+const escapeHtml = (value = "") =>
+  String(value).replace(/[&<>'"]/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "'": "&#39;",
+    '"': "&quot;",
+  })[char]);
+
 // 🔴 VERIFICAR HCAPTCHA
 const verifyHCaptcha = async (token) => {
   const res = await fetch("https://hcaptcha.com/siteverify", {
@@ -20,37 +35,42 @@ const verifyHCaptcha = async (token) => {
 export const handler = async (event) => {
   try {
     if (event.httpMethod !== "POST") {
-      return { statusCode: 405, body: "Method Not Allowed" };
+      return json(405, { success: false, message: "Method Not Allowed" });
+    }
+
+    const requiredEnv = [
+      "HCAPTCHA_SECRET",
+      "EMAIL_USER",
+      "EMAIL_PASS",
+      "EMAIL_TO",
+      "VENTAS_EMAIL_TO",
+      "SECONDARY_EMAIL_TO",
+    ];
+    const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+    if (missingEnv.length) {
+      console.error("Faltan variables de entorno:", missingEnv.join(", "));
+      return json(500, {
+        success: false,
+        message: "El servidor no está configurado correctamente",
+      });
     }
 
     const { token, tipo, base, nombre, telefono, mensaje, website } = JSON.parse(event.body);
 
     // 🧨 HONEYPOT
     if (website) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ message: "Bot detectado" }),
-      };
+      return json(400, { success: false, message: "Bot detectado" });
     }
 
     // 🧨 VALIDACIÓN CAMPOS
     if (!token || !tipo || !base || !nombre || !telefono || !mensaje) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ message: "Faltan campos" }),
-      };
+      return json(400, { success: false, message: "Faltan campos" });
     }
 
     // 🔴 VALIDAR HCAPTCHA
     const captcha = await verifyHCaptcha(token);
     if (!captcha.success) {
-      return {
-        statusCode: 403,
-        body: JSON.stringify({
-          message: "Captcha inválido",
-          details: captcha,
-        }),
-      };
+      return json(403, { success: false, message: "Captcha inválido" });
     }
 
     // 📧 DESTINOS
@@ -65,10 +85,7 @@ export const handler = async (event) => {
 
     const destino = emailsPorBase[base];
     if (!destino) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ message: "Base inválida" }),
-      };
+      return json(400, { success: false, message: "Base inválida" });
     }
 
     // 📩 EMAIL
@@ -86,30 +103,24 @@ export const handler = async (event) => {
       subject: `Nuevo formulario recibido: ${tipo} - ${base}`,
       html: `
         <h2>Nuevo mensaje</h2>
-        <p><strong>Tipo:</strong> ${tipo}</p>
-        <p><strong>Base:</strong> ${base}</p>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Teléfono:</strong> ${telefono}</p>
-        <p><strong>Mensaje:</strong> ${mensaje}</p>
+        <p><strong>Tipo:</strong> ${escapeHtml(tipo)}</p>
+        <p><strong>Base:</strong> ${escapeHtml(base)}</p>
+        <p><strong>Nombre:</strong> ${escapeHtml(nombre)}</p>
+        <p><strong>Teléfono:</strong> ${escapeHtml(telefono)}</p>
+        <p><strong>Mensaje:</strong> ${escapeHtml(mensaje)}</p>
       `,
     });
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        message: "Email enviado correctamente",
-      }),
-    };
+    return json(200, {
+      success: true,
+      message: "Email enviado correctamente",
+    });
   } catch (error) {
     console.error("ERROR:", error);
 
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        success: false,
-        message: "Error interno del servidor",
-      }),
-    };
+    return json(500, {
+      success: false,
+      message: "Error interno del servidor",
+    });
   }
 };

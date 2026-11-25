@@ -1,56 +1,45 @@
 import './App.css';
-import { useContext, useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
 
-import { Header } from './MainPage/Header'
-import { Menu } from './MainPage/Menu'
-import { MapLogo } from './MainPage/MapLogo'
-import { UgtLogo } from './MainPage/UgtLogo'
+import { Header } from './MainPage/Header';
+import { Menu } from './MainPage/Menu';
+import { MapLogo } from './MainPage/MapLogo';
+import { UgtLogo } from './MainPage/UgtLogo';
 import { TextContainer } from './MainPage/TextContainer';
 import { FormHelp } from './MainPage/FormHelp';
 import { Footer } from './MainPage/Footer';
 
 import MenuContext from './context/MenuContext';
 
-
 function App() {
+  const { valueMenu, handleFalseMenu } = useContext(MenuContext);
 
-  const [padding, setPadding] = useState()
-  const [top, setTop] = useState()
-  const [footerHeight, setFooterHeight] = useState()
-  const [menuHeight, setMenuHeight] = useState(0)
-  const menu = useRef(null)
-  const footer = useRef(null)
-  const { valueMenu, handleFalseMenu } = useContext(MenuContext)
-
-
+  // La navegación siempre empieza cerrada al entrar en la home.
   useEffect(() => {
-    // setPadding(menu.current.children[0].clientHeight - menu.current.clientHeight - menu.current.clientHeight)
-    // setFooterHeight(footer.current.firstChild.clientHeight)
-    // setMenuHeight(menu.current.clientHeight)
-    // setTop(menu.current.children[0].clientHeight)
-    valueMenu && handleFalseMenu()
-    // eslint-disable-next-line
-  }, [])
+    if (valueMenu) handleFalseMenu();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className='page-container'>
-      <div className='fixedMenu' ref={menu}>
+    <div className="page-container">
+      <div className="fixedMenu">
         <Header />
         <Menu />
       </div>
 
-      <div className='main'>
-        <MapLogo />
-        <UgtLogo />
-      </div>
+      <main className="main">
+        <div className="home-visual">
+          <MapLogo />
+          <UgtLogo />
+        </div>
 
-      <TextContainer footerHeight={footerHeight} menuHeight={menuHeight} />
-      <FormHelp/>
+        <div className="home-panel">
+          <TextContainer />
+          <FormHelp />
+        </div>
+      </main>
 
-      <div ref={footer}>
-        <Footer id={'footer-main'} mainFooter={'setFooter'} />
-      </div>
+      <Footer id="footer-main" />
     </div>
   );
 }

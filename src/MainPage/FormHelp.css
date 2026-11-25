@@ -1,0 +1,211 @@
+/* Formulario de ayuda y avisos */
+
+.box-btn-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: clamp(0.4rem, 1.6vh, 1.2rem);
+}
+
+.btn-form {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  padding: clamp(0.4rem, 1.2vh, 0.7rem) clamp(1rem, 4vw, 2rem);
+  margin: clamp(0.3rem, 1.2vh, 0.7rem);
+  background-color: var(--red-ugt);
+  border: none;
+  font-size: clamp(0.8rem, 2vh, 1.1rem);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-form:hover {
+  background-color: var(--red-hover);
+}
+
+/* Fondo oscuro con fade */
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 999;
+}
+
+/* Caja del formulario */
+.modal {
+  background: var(--red-ugt);
+  padding: clamp(1rem, 5vw, 2rem);
+  border-radius: 10px;
+  width: min(100%, 480px);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  animation: popIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.form-header {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-header h2 {
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+}
+
+.close-button {
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-body label {
+  font-weight: bold;
+  margin-top: 5px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.form-body input,
+.form-body select,
+.form-body textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-body input:focus,
+.form-body select:focus,
+.form-body textarea:focus {
+  border-color: var(--red-ugt);
+}
+
+.form-body textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-body textarea::placeholder,
+.form-body input::placeholder {
+  color: var(--darkest-grey);
+}
+
+.form-body button {
+  padding: 12px;
+  background-color: var(--red-hover);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.form-body button:hover {
+  background-color: var(--red-hover);
+}
+
+.form-body button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.wrapper {
+  margin-top: 3%;
+}
+
+/* Aviso flotante */
+.text-toast {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #22c55e;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 9999;
+  max-width: calc(100vw - 2rem);
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: toastInOut 3s ease forwards;
+}
+
+@keyframes toastInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) translateX(-120%);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0) translateX(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, 0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0) translateX(120%);
+  }
+}

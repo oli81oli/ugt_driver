@@ -1,14 +1,8 @@
-import '../App.css';
+import './Footer.css';
 
-export const Footer = ({ id, mainFooter }) => {
-
-    let showClassFooter = ''
-    if (mainFooter) {
-        showClassFooter = mainFooter
-    }
-  
+export const Footer = ({ id }) => {
     return (
-        <footer id={id} className={showClassFooter}>
+        <footer id={id} className='setFooter'>
             <p>Servicio informativo de UGT</p>
         </footer>
     )

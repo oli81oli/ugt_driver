@@ -1,4 +1,4 @@
-import '../App.css';
+import './MapLogo.css';
 
 export const MapLogo = () => {
     return (

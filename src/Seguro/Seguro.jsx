@@ -1,4 +1,4 @@
-import '../App.css'
+import './Seguro.css';
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react';
 
@@ -42,9 +42,7 @@ export const Seguro = () => {
                 </Link>
             </div>
 
-            <div>
-                <Footer id={'footer-main'} mainFooter={'setFooter'} />
-            </div>
+            <Footer id={'footer-main'} />
         </div>
     )
 }

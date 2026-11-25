@@ -1,4 +1,4 @@
-import '../App.css'
+import './InfoVentas.css';
 import { Link } from 'react-router-dom'
 
 

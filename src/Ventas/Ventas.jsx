@@ -1,4 +1,4 @@
-import '../App.css';
+import './Ventas.css';
 
 import { useContext, useEffect, useState, useRef } from 'react';
 import MenuContext from '../context/MenuContext';
@@ -14,18 +14,14 @@ import { InfoVentas } from './InfoVentas'
 
 export const Ventas = ({ name, url }) => {
   const [padding, setPadding] = useState()
-  const [menuHeight, setMenuHeight] = useState()
-  const [footerHeight, setFooterHeight] = useState()
   const [viewHeight, setViewHeight] = useState('car')
   const [noPadding, setNoPadding] = useState(false)
   const menu = useRef(null)
-  const footer = useRef(null)
 
   const { valueMenu, handleFalseMenu } = useContext(MenuContext)
   const { chatValues } = useContext(ChatContext)
 
   const [showFooterCheck, setShowFooterCheck] = useState(true)
-  const [showFooterChat, setShowFooterChat] = useState(false)
   const [showInfoDelegados, setShowInfoDelegados] = useState(false)
   const [showInfoInfo, setShowInfoInfo] = useState(false)
   const [showButtonDelegado, setShowButtonDelegado] = useState('')
@@ -33,6 +29,7 @@ export const Ventas = ({ name, url }) => {
 
   const handleButtonDelegados = (e) => {
     valueMenu && handleFalseMenu()
+    setShowFooterCheck(false)
     setShowInfoDelegados(true)
     setShowInfoInfo(false)
     setShowButtonDelegado(e.target.innerHTML)
@@ -49,27 +46,16 @@ export const Ventas = ({ name, url }) => {
   const showFooter = () => {
 
     if (!chatValues.statusChat && !showInfoInfo) {
-      return <div ref={footer}>
-        <Footer
-          id={'footer-main'}
-          mainFooter={'setFooter'} />
-      </div>
+      return <Footer id={'footer-main'} />
     }
     return null
   }
 
-  useEffect(() => {
-    let checkStatus = chatValues.statusChat 
+  const showFooterChat = Boolean(chatValues.statusChat && showInfoDelegados && !showFooterCheck)
 
-    showInfoDelegados && setShowFooterCheck(false)
-    checkStatus && showInfoDelegados && !showFooterCheck && setShowFooterChat(true)
-
-  }, [showInfoDelegados, chatValues.statusChat,  showFooterCheck])
 
   useEffect(() => {
     setPadding(menu.current.children[0].clientHeight)
-    setMenuHeight(menu.current.clientHeight)
-    setFooterHeight(footer.current.firstChild.clientHeight)
     valueMenu && handleFalseMenu()
 
     window.scrollTo({
@@ -108,14 +94,14 @@ export const Ventas = ({ name, url }) => {
 
       <NoBackImg noPadding={noPadding} />
 
-      {!showInfoDelegados && !showInfoInfo && <div className={!showInfoDelegados ? 'show' : 'hide'} style={{ minHeight: 100 - footerHeight + menuHeight + 'vh' }}>
+      {!showInfoDelegados && !showInfoInfo && <div className={!showInfoDelegados ? 'show' : 'hide'}>
         <img className={viewHeight}
           src='https://res.cloudinary.com/dpflfpgcj/image/upload/v1718988627/uploads/smcehcqk0ispphk5kwtc.gif'
           alt='car' />
         <TextContainerCar name={name} url={url} />
       </div>}
 
-      <DelegadosVentas name={name} showInfoDelegados={showInfoDelegados} setShowFooterChat={setShowFooterChat} />
+      <DelegadosVentas name={name} showInfoDelegados={showInfoDelegados} />
       <InfoVentas showInfoInfo={showInfoInfo} />
 
       {showInfoDelegados && !showFooterChat ? <Footer id='footer-main' /> : null}

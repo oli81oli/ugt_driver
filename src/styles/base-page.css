@@ -1,0 +1,54 @@
+/* Layout compartido por las seis páginas de base */
+
+.selectOption {
+  text-align: center;
+  background-color: var(--darkest-grey);
+  margin: 0 auto;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  text-transform: uppercase;
+  color: white;
+  background-color: transparent;
+  padding: 3% 10%;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+.buttons.delegados,
+.buttons.info {
+  border: none;
+  border-bottom: 2px solid var(--red-ugt);
+}
+
+.car {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.car2 {
+  width: min(60%, 420px);
+}
+
+.carBox {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.carBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}

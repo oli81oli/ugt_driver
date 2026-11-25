@@ -1,0 +1,16 @@
+/* Selector de base */
+
+#selectTag {
+  border: 2px solid var(--darkest-grey);
+  border-radius: 5px;
+  padding: clamp(0.35rem, 1vh, 0.6rem) 0.6rem;
+  font-size: clamp(0.75rem, 1.8vh, 1rem);
+  text-transform: uppercase;
+  margin-top: clamp(0.5rem, 2vh, 1rem);
+  max-width: min(100%, 320px);
+  width: 100%;
+  display: block;
+  margin-inline: auto;
+  background-color: white;
+  color: var(--darkest-grey);
+}
